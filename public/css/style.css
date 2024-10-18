@@ -52,3 +52,12 @@
     font-weight: 900;
     font-style: normal;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(185 28 28);
+    border-radius: 10px;
+}
