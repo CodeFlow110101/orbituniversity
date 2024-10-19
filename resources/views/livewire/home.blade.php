@@ -378,7 +378,117 @@ use function Livewire\Volt\{state};
         </div>
     </div>
 
-    <div class="h-96">
+    <div x-data="calculateHeight" class="mt-24 w-4/5 mx-auto">
+        <div class="flex justify-between gap-32">
+            <div class="w-full h-full">
+                <div class="h-32"></div>
+                <div :style="'height: ' + contenHeight1 + 'px'" class="w-full relative">
+                    <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
+                        <div class="text-white/50">month</div>
+                        <div class="text-white">Apprentice</div>
+                        <div class="absolute -z-10 -top-14 -left-14 scale-150 text-red-700/50 flex justify-between w-min">
+                            <div class=" inter-700 text-9xl">
+                                1
+                            </div>
+                            <div class="pt-2">st</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-48"></div>
+                <div :style="'height: ' + contenHeight2 + 'px'" class="w-full relative">
+                    <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
+                        <div class="text-white/50">months</div>
+                        <div class="text-white">Craftsman</div>
+                        <div class="absolute -z-10 -top-14 -left-14 scale-150 text-red-700/50 flex justify-between w-min">
+                            <div class=" inter-700 text-9xl">
+                                2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-32"></div>
+            </div>
+            <div class="w-min h-full">
+                <div class="w-0.5 h-full bg-white/50 rounded-full">
+                    <div x-data="stickyScrollDesign" class="h-32 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-red-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                    <div x-data="stickyScrollDesign" :style="'height: ' + contenHeight1 + 'px'" class="w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-red-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2 -mx-16">
+                            <img src="{{asset('images/scrollDesign1.png')}}">
+                        </div>
+                    </div>
+                    <div x-data="stickyScrollDesign" class="h-48 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-red-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                    <div x-data="stickyScrollDesign" :style="'height: ' + contenHeight2 + 'px'" class="w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-red-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2 -mx-16">
+                            <img src="{{asset('images/scrollDesign2.png')}}">
+                        </div>
+                    </div>
+                    <div x-data="stickyScrollDesign" class="h-32 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-red-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full grid grid-cols-1 gap-48 h-min my-48">
+                <div x-ref="content1" class="h-min grid grid-cols-1 gap-4">
+                    <div class="text-2xl text-white inter-800">You start off as an Apprentice...</div>
+                    <div class="grid grid-rows-3 grid-flow-col gap-2">
+                        <img src="{{asset('/images/home6.webp')}}">
+                        <img src="{{asset('/images/home7.webp')}}">
+                        <img src="{{asset('/images/home8.webp')}}">
+                        <img src="{{asset('/images/home9.webp')}}">
+                        <img src="{{asset('/images/home10.webp')}}">
+                        <img src="{{asset('/images/home11.webp')}}">
+                    </div>
+                    <div class="text-white text-xl inter-300">
+                        These are the programs you <span class="inter-800">unlock straight away</span> when joining Digital Launchpad, as well as the community. That's where you're going to get guidance from coaches, as well as from other students who are further ahead of you in their journey.
+                    </div>
+                    <div class="h-20"></div>
+                </div>
 
+                <div x-ref="content2" class="h-min w-full grid grid-cols-1 gap-4">
+                    <div class="text-2xl text-white inter-800">Get Access To My 8-Figure Network</div>
+                    <div class="grid grid-rows-1 grid-flow-col gap-2">
+                        <img src="{{asset('/images/home12.webp')}}">
+                        <img src="{{asset('/images/home13.webp')}}">
+                    </div>
+                    <div class="text-white text-xl inter-300">
+                        On your 2nd Month, you'll get access to my own network. Every single month we'll host <span class="inter-800">LIVE Calls with people from my Network.</span> Imagine being on the same call as 8 and 9-figure serial entrepreneurs. If you think about it, each one of them has made a $1,000 dozens of thousands of times. So they know a thing or two about making money, and can help you get there too.
+                    </div>
+                    <div class="h-20"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white h-min grid grid-cols-1 gap-6 text-center pt-32 pb-6">
+        <div class="text-4xl inter-800 uppercase tracking-wider">Why Am I Offering You Such <br> Opportunity For So Cheap?</div>
+        <div class="flex justify-center">
+            <img src="{{asset('images/home14.webp')}}">
+        </div>
+        <div class="w-2/5 text-left mx-auto h-min grid grid-cols-1 gap-4 inter-400 text-2xl">
+            <div>Here's the thing…</div>
+            <div>The <span class="inter-800">more people you help, the more money you make.</span></div>
+        </div>
+    </div>
+
+    <div class="my-28">
+        <div class="text-white text-center h-min grid grid-cols-1 gap-4">
+            <div class="text-xl">
+                <span class="uppercase inter-700 text-red-700">
+                    frequently asked questions
+                </span>
+            </div>
+            <div class="inter-800 uppercase text-4xl">
+                Get Your questions answered
+            </div>
+        </div>
     </div>
 </div>
