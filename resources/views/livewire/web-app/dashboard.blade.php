@@ -14,9 +14,9 @@ use function Livewire\Volt\{state};
         <div class="w-2/5 border border-white/30 rounded-3xl p-6 gap-3 flex flex-col">
             <div class="text-white inter-300">Monk Mode</div>
             <div class="border-4 border-blue-500 py-4 rounded-3xl text-center">
-                <div class="text-6xl text-white inter-700">0</div>
-                <div class="text-3xl text-white inter-600 py-2">Day Streak</div>
-                <div class="text-xl text-white/30 inter-600">21 Days Left</div>
+                <div class="text-3xl text-white inter-700">0</div>
+                <div class="text-xl text-white inter-600 py-2">Day Streak</div>
+                <div class="text-white/30 inter-600">21 Days Left</div>
             </div>
             <div class="flex justify-around rounded-2xl p-4 border border-white/30 w-full">
                 <div class="border-2 border-white/30 hover:border-white group transition-colors duration-200 rounded-full p-1">

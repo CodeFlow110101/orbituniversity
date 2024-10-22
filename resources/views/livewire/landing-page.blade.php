@@ -1,10 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 use function Livewire\Volt\{state, mount};
 
 state(['path']);
 mount(function () {
     $this->path = request()->path();
+    $isAuth = Auth::check();
+
+    if ($isAuth && in_array($this->path, ['sign-in'])) {
+        $this->redirectRoute('dashboard', navigate: true);
+    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'programs'])) {
+        $this->redirectRoute('sign-in', navigate: true);
+    }
 });
 
 ?>
