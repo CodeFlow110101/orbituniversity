@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use function Livewire\Volt\{state, mount};
+use function Livewire\Volt\{state, mount, on};
 
 state(['path', 'user']);
 
@@ -16,6 +16,10 @@ $signOut = function (Request $request) {
 
     $this->redirectRoute('sign-in', navigate: true);
 };
+
+on(['refresh-sidebar' => function () {
+    $this->user = Auth::user();
+}]);
 
 mount(function ($path) {
     $this->path = $path;

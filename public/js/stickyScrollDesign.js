@@ -2,9 +2,11 @@ function stickyScrollDesign() {
   return {
     topElementHeight: 0,
     init() {
-      window.addEventListener("scroll", () => {
-        this.topElementHeight = this.$refs.stickyElement.offsetTop;
-      });
+      setTimeout(() => {
+        window.addEventListener("scroll", () => {
+          this.topElementHeight = this.$refs.stickyElement.offsetTop;
+        });
+      }, 100);
     }
   };
 }

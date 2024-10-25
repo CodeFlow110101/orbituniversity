@@ -22,6 +22,7 @@ mount(function () {
     @if($path == '/')
     <livewire:home />
     @elseif(in_array($path,['dashboard','program','setting']))
+    <livewire:web-app.toastr-popup />
     <div class="flex justify-between gap-8">
         <div class="w-1/4">
             <livewire:web-app.side-bar :path="$path" />
@@ -32,7 +33,7 @@ mount(function () {
             @elseif($path == 'program')
             <livewire:web-app.program />
             @elseif($path == 'setting')
-            <livewire:web-app.setting />
+            <livewire:web-app.setting.setting />
             @endif
         </div>
     </div>
