@@ -18,6 +18,7 @@ $submit = function () {
     ]);
 
     $this->dispatch('refresh-sidebar');
+    $this->dispatch('show-toastr', type: "success", message: "Updated successfully.");
 };
 
 mount(function () {
@@ -55,7 +56,7 @@ mount(function () {
                 </div>
             </div>
             <div class="flex justify-center">
-                <button type="submit" wire:click="submit" wire:loading.class="pointer-events-none" wire:target="submit" class="hover:bg-red-700 w-32 h-14 hover:shadow-lg hover:shadow-red-700/50 transition-colors duration-300 cursor-pointer bg-gradient-to-bl from-red-700 via-transparent to-red-700 whitespace-nowrap p-0.5 rounded-xl">
+                <button type="submit" wire:loading.class="pointer-events-none" wire:target="submit" class="hover:bg-red-700 w-32 h-14 hover:shadow-lg hover:shadow-red-700/50 transition-colors duration-300 cursor-pointer bg-gradient-to-bl from-red-700 via-transparent to-red-700 whitespace-nowrap p-0.5 rounded-xl">
                     <div class="size-full bg-black rounded-xl inter-300 text-lg flex justify-center items-center">
                         <div wire:loading.class="hidden pointer-events-none" wire:target="submit">Update</div>
                         <svg wire:loading.class.remove="hidden" wire:target="submit" aria-hidden="true" class="w-8 hidden h-8 text-transparent animate-spin fill-red-700" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

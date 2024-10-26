@@ -20,7 +20,6 @@ $submit = function (Request $request) {
         ])
     ) {
         $request->session()->regenerate();
-
         $this->redirectRoute('dashboard', navigate: true);
     } else {
         $this->addError('email', 'Invalid Credentials');

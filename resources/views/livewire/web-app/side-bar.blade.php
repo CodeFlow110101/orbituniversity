@@ -61,6 +61,16 @@ mount(function ($path) {
                         <div class="w-full inter-400 text-lg">Programs</div>
                     </div>
                 </a>
+                <a href="/admin" wire:navigate>
+                    <div class="flex justify-between gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
+                        <div class="w-min">
+                            <svg class="w-8 h-8 @if($path == 'admin') text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" d="M10 19H5a1 1 0 0 1-1-1v-1a3 3 0 0 1 3-3h2m10 1a3 3 0 0 1-3 3m3-3a3 3 0 0 0-3-3m3 3h1m-4 3a3 3 0 0 1-3-3m3 3v1m-3-4a3 3 0 0 1 3-3m-3 3h-1m4-3v-1m-2.121 1.879-.707-.707m5.656 5.656-.707-.707m-4.242 0-.707.707m5.656-5.656-.707.707M12 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>
+                        </div>
+                        <div class="w-full inter-400 text-lg">Admin</div>
+                    </div>
+                </a>
                 <a href="/competitive-analysis" wire:navigate>
                     <div class="flex justify-between gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
                         <div class="w-min">

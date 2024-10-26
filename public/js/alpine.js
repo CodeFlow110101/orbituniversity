@@ -23,3 +23,20 @@ function calculateHeight() {
     }
   };
 }
+
+function toastr() {
+  return {
+    show: false,
+    type: "",
+    message: "",
+    toggle(event) {
+      this.show = true;
+      this.type = event.type;
+      this.message = event.message;
+
+      setTimeout(() => {
+        this.show = false;
+      }, 4000);
+    }
+  };
+}

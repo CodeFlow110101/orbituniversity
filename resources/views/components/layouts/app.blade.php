@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/stickyScrollDesign.js')}}"></script>
+    <script src="{{ asset('js/alpine.js')}}"></script>
 </head>
 
 <body class="bg-black">

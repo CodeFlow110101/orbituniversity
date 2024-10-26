@@ -11,7 +11,7 @@ mount(function () {
 
     if ($isAuth && in_array($this->path, ['sign-in'])) {
         $this->redirectRoute('dashboard', navigate: true);
-    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting'])) {
+    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin'])) {
         $this->redirectRoute('sign-in', navigate: true);
     }
 });
@@ -21,7 +21,7 @@ mount(function () {
 <div>
     @if($path == '/')
     <livewire:home />
-    @elseif(in_array($path,['dashboard','program','setting']))
+    @elseif(in_array($path,['dashboard','program','setting','admin']))
     <livewire:web-app.toastr-popup />
     <div class="flex justify-between gap-8">
         <div class="w-1/4">
@@ -34,6 +34,8 @@ mount(function () {
             <livewire:web-app.program />
             @elseif($path == 'setting')
             <livewire:web-app.setting.setting />
+            @elseif($path == 'admin')
+            <livewire:web-app.admin.admin />
             @endif
         </div>
     </div>
