@@ -429,7 +429,7 @@ mount(function () {
                                 </div>
                                 <div class="pt-2">st</div>
                             </div>
-                            <div class="mt-auto text-left">
+                            <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">month</div>
                                 <div class="text-white">Apprentice</div>
                             </div>
@@ -461,7 +461,7 @@ mount(function () {
                                     2
                                 </div>
                             </div>
-                            <div class="mt-auto text-left">
+                            <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">months</div>
                                 <div class="text-white">Craftsman</div>
                             </div>
