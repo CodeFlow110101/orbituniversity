@@ -507,7 +507,7 @@ mount(function () {
         <div x-data="{show:'generel'}" class="lg:w-1/2 w-full h-min mx-auto grid grid-cols-1 gap-4">
             <div class="flex justify-around lg:w-min w-11/12 mx-auto gap-2 lg:gap-8 uppercase max-lg:text-sm text-white inter-500">
                 @foreach($faq as $category => $questions)
-                <div @click="show = '{{$category}}'" :class="show == '{{$category}}' ? 'border-white/50' : 'border-white/10'" class="max-lg:w-full text-center border-b-2 cursor-pointer lg:px-12 lg:py-3 hover:border-red-700 transition-colors duration-200">{{$category}}</div>
+                <div @click="show = '{{$category}}'" :class="show == '{{$category}}' ? 'border-white/50' : 'border-white/10'" class="max-lg:w-full text-center border-b-2 cursor-pointer lg:px-12 py-3 hover:border-red-700 transition-colors duration-200">{{$category}}</div>
                 @endforeach
             </div>
             <div class="text-white max-lg: w-11/12 mx-auto">
