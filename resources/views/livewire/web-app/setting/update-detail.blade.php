@@ -29,7 +29,7 @@ mount(function () {
 ?>
 
 <div class="w-full h-full bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
-    <form wire:submit="submit" class="size-full flex items-center justify-center bg-black rounded-2xl">
+    <div class="size-full flex items-center justify-center bg-black rounded-2xl">
         <div class="h-min w-full px-8 grid grid-cols-1 gap-3 text-white">
             <div class="h-min grid grid-cols-1 gap-2">
                 <div class="text-lg inter-300">Name</div>
@@ -56,7 +56,7 @@ mount(function () {
                 </div>
             </div>
             <div class="flex justify-center">
-                <button type="submit" wire:loading.class="pointer-events-none" wire:target="submit" class="hover:bg-red-700 w-32 h-14 hover:shadow-lg hover:shadow-red-700/50 transition-colors duration-300 cursor-pointer bg-gradient-to-bl from-red-700 via-transparent to-red-700 whitespace-nowrap p-0.5 rounded-xl">
+                <button @click="submit()" wire:loading.class="pointer-events-none" wire:target="submit" class="hover:bg-red-700 w-32 h-14 hover:shadow-lg hover:shadow-red-700/50 transition-colors duration-300 cursor-pointer bg-gradient-to-bl from-red-700 via-transparent to-red-700 whitespace-nowrap p-0.5 rounded-xl">
                     <div class="size-full bg-black rounded-xl inter-300 text-lg flex justify-center items-center">
                         <div wire:loading.class="hidden pointer-events-none" wire:target="submit">Update</div>
                         <svg wire:loading.class.remove="hidden" wire:target="submit" aria-hidden="true" class="w-8 hidden h-8 text-transparent animate-spin fill-red-700" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,5 +67,5 @@ mount(function () {
                 </button>
             </div>
         </div>
-    </form>
+    </div>
 </div>

@@ -7,6 +7,7 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite('resources/css/app.css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Inter Font Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,8 @@
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <script src="{{ asset('js/alpine.js')}}"></script>
+    <script src="{{ asset('js/events.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="bg-black">
