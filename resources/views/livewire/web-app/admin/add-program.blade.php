@@ -39,14 +39,22 @@ $submit = function () {
             <div class="w-full h-full bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
                 <div class="size-full flex items-center justify-center bg-black p-4 rounded-2xl">
                     <div class="size-full flex items-center justify-center">
-                        <div x-show="!preview" @click="$refs.imageInput.click()" class="size-full relative border border-white/30 rounded-2xl">
+                        <div x-show="!preview"
+                            x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 scale-90"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            @click="$refs.imageInput.click()" class="size-full relative border border-white/30 rounded-2xl">
                             <div class="absolute inset-0 flex justify-center items-center">
                                 <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
                                 </svg>
                             </div>
                         </div>
-                        <div x-show="preview" class="cursor-pointer" @click="$refs.imageInput.click()">
+                        <div x-show="preview"
+                            x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 scale-90"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            class="cursor-pointer" @click="$refs.imageInput.click()">
                             <img class="rounded-2xl max-h-52" :src="preview" alt="Image Preview">
                             <input x-on:reset-file-input.window="$refs.imageInput.value = null; $refs.imageInput.dispatchEvent(new Event('change'));" class="hidden" type="file" x-ref="imageInput" id="file" @change="previewImage" accept="image/*" />
                         </div>
@@ -93,7 +101,7 @@ $submit = function () {
                                 @enderror
                             </div>
                         </div>
-                        <div class="flex justify-center">
+                        <div x-data="{loader : false}" class="flex justify-center">
                             <button wire:click="submit" wire:loading.class="pointer-events-none" wire:target="submit" class="hover:bg-red-700 w-32 h-14 hover:shadow-lg hover:shadow-red-700/50 transition-colors duration-300 cursor-pointer bg-gradient-to-bl from-red-700 via-transparent to-red-700 whitespace-nowrap p-0.5 rounded-xl">
                                 <div class="size-full bg-black rounded-xl inter-300 text-lg flex justify-center items-center">
                                     <div wire:loading.class="hidden pointer-events-none" wire:target="submit">Submit</div>

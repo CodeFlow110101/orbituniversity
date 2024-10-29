@@ -1,8 +1,18 @@
 <?php
 
-use function Livewire\Volt\{state};
+use App\Models\Program;
 
-//
+use function Livewire\Volt\{state, with, usesPagination, mount};
+
+usesPagination();
+
+state(['colors']);
+
+with(fn() => ['programs' => Program::paginate(7)]);
+
+mount(function () {
+    $this->colors = ['from-red-700', 'from-green-700', 'from-indigo-700', 'from-amber-700'];
+});
 
 ?>
 
@@ -16,8 +26,11 @@ use function Livewire\Volt\{state};
                 </svg>
             </div>
         </a>
-        <template x-for="(item, index) in count">
-            <div class="w-full grow bg-white/50 rounded-xl bg-gradient-to-t from-red-700"></div>
-        </template>
+        @foreach($programs as $program)
+        <div class="w-full grow bg-white/50 relative rounded-xl">
+            <div class="absolute inset-0 rounded-xl bg-gradient-to-t {{$colors[rand(0,3)]}} to-30%"></div>
+            <img class="rounded-xl size-full" src="{{$program->image}}">
+        </div>
+        @endforeach
     </div>
 </div>
