@@ -165,7 +165,7 @@ mount(function () {
                 </div>
             </div>
         </div>
-        <div class="w-full h-96 rounded-xl bg-white"></div>
+        <img class="w-full h-96 rounded-xl object-cover object-top" src="{{asset('images/home16.jpg')}}">
     </div>
 
     <div class="h-[1px] bg-white/20"></div>
