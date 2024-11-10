@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 
 use function Livewire\Volt\{state, mount};
 
-state(['path']);
+state(['path', 'id']);
 mount(function () {
     $this->path = request()->path();
     $isAuth = Auth::check();
@@ -15,8 +15,16 @@ mount(function () {
 
     if ($isAuth && in_array($this->path, ['sign-in'])) {
         $this->redirectRoute('dashboard', navigate: true);
-    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin', 'add-program'])) {
+    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin', 'add-program', 'video', 'add-video'])) {
         $this->redirectRoute('sign-in', navigate: true);
+    }
+
+    if (session()->has('id')) {
+        $this->id = session()->get('id');
+    }
+
+    if (in_array($this->path, ['video', 'add-video']) && !$this->id) {
+        $this->redirectRoute('program', navigate: true);
     }
 });
 
@@ -25,7 +33,7 @@ mount(function () {
 <div>
     @if($path == '/')
     <livewire:home />
-    @elseif(in_array($path,['dashboard','program','setting','admin','add-program']))
+    @elseif(in_array($path,['dashboard','program','setting','admin','add-program','video','add-video']))
     <livewire:web-app.toastr-popup />
     <div class="flex justify-between gap-8">
         <div class="w-1/4">
@@ -42,6 +50,10 @@ mount(function () {
             <livewire:web-app.admin.admin />
             @elseif($path == 'add-program')
             <livewire:web-app.admin.add-program />
+            @elseif($path == 'video')
+            <livewire:web-app.video :id="$id" />
+            @elseif($path == 'add-video')
+            <livewire:web-app.admin.add-video :id="$id" />
             @endif
         </div>
     </div>

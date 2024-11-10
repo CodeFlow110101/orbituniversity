@@ -61,3 +61,16 @@
     background: rgb(185 28 28);
     border-radius: 10px;
 }
+
+.narrow-scrollbar::-webkit-scrollbar {
+    height: 4px; /* Adjust the height as needed */
+}
+
+.narrow-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(185 28 28);
+    border-radius: 4px; /* Rounded corners */
+}
+
+.narrow-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent; /* Background color of the scrollbar track */
+}

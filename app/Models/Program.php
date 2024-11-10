@@ -8,5 +8,5 @@ class Program extends Model
 {
     protected $table = 'programs';
 
-    protected $fillable = ['name', 'description', 'image'];
+    protected $fillable = ['name', 'description', 'image', 'image_path'];
 }

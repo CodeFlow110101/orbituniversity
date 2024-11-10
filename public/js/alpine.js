@@ -63,3 +63,42 @@ function imageUploader() {
     }
   };
 }
+
+function imageVideoUploader() {
+  return {
+    videoFileName: "Choose a Video",
+    preview: "",
+    handleFileSelect(event) {
+      const file = event.target.files[0];
+
+      if (file) {
+        if (file.type.startsWith("video/")) {
+          this.videoFileName = file.name;
+          this.$wire.video = Math.floor(file.size / (1024 * 1024));
+        } else {
+          alert("Please select a valid video file");
+        }
+      } else {
+        this.videoFileName = "Choose a Video";
+        this.$wire.video = "";
+      }
+    },
+    previewImage(event) {
+      this.$wire.thumbnail = "";
+      const file = event.target.files[0];
+      if (file) {
+        this.$wire.thumbnail = Math.floor(file.size / 1024);
+      }
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          this.preview = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        this.preview = "";
+      }
+    }
+  };
+}

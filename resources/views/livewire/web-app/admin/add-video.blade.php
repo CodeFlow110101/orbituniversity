@@ -1,22 +1,25 @@
 <?php
 
-use App\Models\Program;
+use App\Models\Video;
 
-use function Livewire\Volt\{state, rules, on};
+use function Livewire\Volt\{state, rules, on, mount};
 
-state(['name', 'description', 'thumbnail']);
+state(['name', 'description', 'thumbnail', 'video', 'video', 'programId']);
 
-rules(['name' => 'required|min:3', 'description' => 'required|min:6', 'thumbnail' => "required|lt:100",])->messages([
+rules(['name' => 'required|min:3', 'description' => 'required|min:6', 'thumbnail' => "required|lt:100", 'video' => "required|lt:50",])->messages([
     'thumbnail.lt' => 'The :attribute must be less than 100kb.',
+    'videoSize.lt' => 'The video file size must be less than 50mb.',
 ]);
 
-on(['store' => function ($file) {
+on(['store-video' => function ($file) {
 
-    Program::create([
+    Video::create([
+        'program_id' => $this->programId,
         'name' => $this->name,
         'description' => $this->description,
-        'image' => $file['url'],
-        'image_path' => $file['path']
+        'image' => $file['imageUrl'],
+        'video_path' => $file['videoPath'],
+        'image_path' => $file['imagePath'],
     ]);
 
     $this->reset();
@@ -27,19 +30,21 @@ on(['store' => function ($file) {
 
 $submit = function () {
     $this->validate();
-    $this->dispatch('file-upload');
+    $this->dispatch('video-upload');
 };
-
+mount(function ($id) {
+    $this->programId = $id;
+})
 ?>
 
-<div x-data="imageUploader" class="size-full">
+<div x-data="imageVideoUploader" class="size-full">
     <div class="size-full flex flex-col gap-8">
         <div class="grow flex justify-between gap-8 items-center">
             <div class="w-full h-full text-white text-xl inter-400">
                 <div>Thumbnail Image</div>
                 <div class="bg-gradient-to-r from-red-700 to-black to-90% h-0.5 rounded-full mt-2"></div>
             </div>
-            <div class="w-full h-full bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
+            <div class="w-full h-full hover:bg-red-700 transition-colors duration-500 bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
                 <div class="size-full flex items-center justify-center bg-black p-4 rounded-2xl">
                     <div class="size-full flex items-center justify-center">
                         <div x-show="!preview"
@@ -49,7 +54,7 @@ $submit = function () {
                             @click="$refs.imageInput.click()" class="size-full relative border border-white/30 rounded-2xl">
                             <div class="absolute inset-0 flex justify-center items-center">
                                 <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
                                 </svg>
                             </div>
                         </div>
@@ -59,7 +64,7 @@ $submit = function () {
                             x-transition:enter-end="opacity-100 scale-100"
                             class="cursor-pointer" @click="$refs.imageInput.click()">
                             <img class="rounded-2xl max-h-52" :src="preview" alt="Image Preview">
-                            <input x-on:reset-file-input.window="$refs.imageInput.value = null; $refs.imageInput.dispatchEvent(new Event('change'));" class="hidden" type="file" x-ref="imageInput" id="file" @change="previewImage" accept="image/*" />
+                            <input x-on:reset-file-input.window="$refs.imageInput.value = null; $refs.imageInput.dispatchEvent(new Event('change'));" class="hidden" type="file" x-ref="imageInput" id="image" @change="previewImage" accept="image/*" />
                         </div>
                         <input class="hidden" wire:model="thumbnail" type="text">
                     </div>
@@ -77,7 +82,7 @@ $submit = function () {
                 <div>Details</div>
                 <div class="bg-gradient-to-r from-red-700 to-black to-90% h-0.5 rounded-full mt-2"></div>
             </div>
-            <div class="w-full h-full bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
+            <div class="w-full h-full hover:bg-red-700 transition-colors duration-500 bg-gradient-to-br from-red-700 via-transparent to-red-700 p-0.5 rounded-2xl">
                 <div class="size-full flex items-center justify-center bg-black rounded-2xl">
                     <div class="h-min w-full px-8 grid grid-cols-1 gap-3 text-white">
                         <div class="h-min grid grid-cols-1 gap-2">
@@ -99,6 +104,31 @@ $submit = function () {
                             </div>
                             <div>
                                 @error('description')
+                                <span wire:transition.in.duration.500ms="scale-y-100"
+                                    wire:transition.out.duration.500ms="scale-y-0" class="text-red-700">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="h-min grid grid-cols-1 gap-2">
+                            <div class="text-lg inter-300">Video</div>
+                            <div>
+                                <div class="size-full cursor-pointer flex items-center inter-400 text-lg bg-transparent border border-red-700 rounded-xl py-4 px-4 outline-none caret-red-700">
+                                    <div @click="$refs.videoFileInput.click();" class="grow" x-text="videoFileName"></div>
+                                    <div x-show="videoFileName != 'Choose a Video'"
+                                        x-transition:enter="transition ease-out duration-500"
+                                        x-transition:enter-start="opacity-0 scale-90"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        @click="$refs.videoFileInput.value = null; $refs.videoFileInput.dispatchEvent(new Event('change'));">
+                                        <svg class="w-6 h-6 text-red-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input class="hidden" wire:model="video" type="text">
+                                <input x-on:reset-file-input.window="$refs.videoFileInput.value = null; $refs.videoFileInput.dispatchEvent(new Event('change'));" x-ref="videoFileInput" @change="handleFileSelect" type="file" id="video" accept="video/*" class="w-full hidden inter-400 text-lg bg-transparent border border-red-700 rounded-xl py-2 px-4 outline-none caret-red-700">
+                            </div>
+                            <div>
+                                @error('video')
                                 <span wire:transition.in.duration.500ms="scale-y-100"
                                     wire:transition.out.duration.500ms="scale-y-0" class="text-red-700">{{ $message }}</span>
                                 @enderror
