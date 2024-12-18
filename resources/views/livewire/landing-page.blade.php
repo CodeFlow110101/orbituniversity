@@ -13,7 +13,7 @@ mount(function () {
         $this->js('setTimeout(() => {Livewire.dispatch("show-toastr");}, 100);');
     }
 
-    if ($isAuth && in_array($this->path, ['sign-in' , 'sign-up'])) {
+    if ($isAuth && in_array($this->path, ['sign-in', 'sign-up'])) {
         $this->redirectRoute('dashboard', navigate: true);
     } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin', 'add-program', 'video', 'add-video'])) {
         $this->redirectRoute('sign-in', navigate: true);
@@ -39,7 +39,7 @@ mount(function () {
         <div class="w-1/4">
             <livewire:web-app.side-bar :path="$path" />
         </div>
-        <div class="w-full h-screen py-8 pr-8">
+        <div class="w-full h-dvh py-8 pr-8">
             @if($path == 'dashboard')
             <livewire:web-app.dashboard />
             @elseif($path == 'program')
@@ -58,7 +58,7 @@ mount(function () {
         </div>
     </div>
     @elseif(in_array($path , ['sign-in' , 'sign-up']))
-    <div class="h-screen">
+    <div class="h-dvh">
         @if($path == 'sign-in')
         <livewire:web-app.sign-in />
         @elseif($path == 'sign-up')
