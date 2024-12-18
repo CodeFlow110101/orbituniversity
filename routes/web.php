@@ -8,6 +8,7 @@ Volt::route('/', 'landing-page')->name('home');
 Volt::route('/dashboard', 'landing-page')->name('dashboard');
 Volt::route('/program', 'landing-page')->name('program');
 Volt::route('/sign-in', 'landing-page')->name('sign-in');
+Volt::route('/sign-up', 'landing-page')->name('sign-up');
 Volt::route('/setting', 'landing-page')->name('setting');
 Volt::route('/admin', 'landing-page')->name('admin');
 Volt::route('/add-program', 'landing-page')->name('add-program');

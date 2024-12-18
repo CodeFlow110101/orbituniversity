@@ -68,7 +68,7 @@ mount(function ($path) {
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 18V6l8 6-8 6Z" />
                             </svg>
                         </div>
-                        <div class="w-full inter-400 text-lg">Monk Mode</div>
+                        <div class="w-full inter-400 text-lg">Zen Mode</div>
                     </div>
                 </a>
                 <a href="/competitive-analysis" wire:navigate>
