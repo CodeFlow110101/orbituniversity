@@ -30,7 +30,7 @@ $submit = function (Request $request) {
 
 <div class="flex flex-col h-full py-2">
     <div>
-        <div class="text-white inter-600 uppercase text-2xl text-center py-1">The Orbit university</div>
+        <div class="text-white inter-600 uppercase text-lg lg:text-2xl text-center py-1">The Orbit university</div>
         <div class="bg-gradient-to-r from-black from-10% via-blue-700 to-black to-90% h-[1px] mt-2"></div>
     </div>
     <div class="grow w-full flex items-center">
@@ -39,19 +39,19 @@ $submit = function (Request $request) {
                 <div class="flex justify-center whitespace-nowrap">
                     <div class="bg-gradient-to-b from-blue-700 p-0.5 rounded-t-2xl w-min">
                         <div class="size-full bg-black text-center rounded-t-2xl px-8 py-3">
-                            <div class="inter-600 text-3xl bg-clip-text text-transparent bg-gradient-to-b from-50% from-white/90">
+                            <div class="inter-600 text-xl lg:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-50% from-white/90">
                                 Sign In
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mx-auto w-4/12">
+                <div class="mx-auto w-11/12 lg:w-4/12">
                     <form wire:submit="submit" class="bg-gradient-to-tr shadow-2xl shadow-blue-700/30 rounded-3xl from-blue-700 via-transparent to-blue-700 p-0.5">
-                        <div class="size-full p-10 rounded-3xl bg-black">
-                            <div class="h-min grid grid-cols-1 gap-6 text-white">
+                        <div class="size-full p-6 lg:p-10 rounded-3xl bg-black">
+                            <div class="h-min grid grid-cols-1 gap-2 lg:gap-6 text-white">
                                 <div class="h-min grid grid-cols-1 gap-2">
-                                    <div class="text-xl inter-200">Email</div>
+                                    <div class="lg:text-xl inter-200">Email</div>
                                     <div>
                                         <input wire:model="email" type="text" class="w-full inter-400 text-lg bg-transparent border border-blue-700 rounded-xl py-2 px-4 outline-none caret-blue-700">
                                     </div>
@@ -63,7 +63,7 @@ $submit = function (Request $request) {
                                     </div>
                                 </div>
                                 <div class="h-min grid grid-cols-1 gap-2">
-                                    <div class="text-xl inter-200">Password</div>
+                                    <div class="lg:text-xl inter-200">Password</div>
                                     <div>
                                         <input wire:model="password" type="password" class="w-full inter-400 text-lg bg-transparent border border-blue-700 rounded-xl py-2 px-4 outline-none caret-blue-700">
                                     </div>
@@ -88,7 +88,7 @@ $submit = function (Request $request) {
                             </div>
                         </div>
                     </form>
-                    <div class="flex justify-center text-white py-10 text-lg inter-600">
+                    <div class="flex justify-center text-white py-10 lg:text-lg inter-600">
                         <a href="/sign-up" wire:navigate>Don't have an account? <span class="text-blue-700">Sign Up</span></a>
                     </div>
                 </div>
