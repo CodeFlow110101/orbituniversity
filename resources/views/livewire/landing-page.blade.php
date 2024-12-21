@@ -15,7 +15,7 @@ mount(function () {
 
     if ($isAuth && in_array($this->path, ['sign-in', 'sign-up'])) {
         $this->redirectRoute('dashboard', navigate: true);
-    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin', 'add-program', 'video', 'add-video'])) {
+    } elseif (!$isAuth && in_array($this->path, ['dashboard', 'program', 'setting', 'admin', 'add-program', 'video', 'add-video', 'zen-mode'])) {
         $this->redirectRoute('sign-in', navigate: true);
     }
 
@@ -33,7 +33,7 @@ mount(function () {
 <div class="h-dvh">
     @if($path == '/')
     <livewire:home />
-    @elseif(in_array($path,['dashboard','program','setting','admin','add-program','video','add-video']))
+    @elseif(in_array($path,['dashboard','program','setting','admin','add-program','video','add-video','zen-mode']))
     <livewire:web-app.toastr-popup />
     <div class="h-full flex justify-between gap-4 sm:gap-8">
         <div class="w-min sm:w-1/4 h-full">
@@ -48,6 +48,8 @@ mount(function () {
             <livewire:web-app.setting.setting />
             @elseif($path == 'admin')
             <livewire:web-app.admin.admin />
+            @elseif($path == 'zen-mode')
+            <livewire:web-app.zen-mode />
             @elseif($path == 'add-program')
             <livewire:web-app.admin.add-program />
             @elseif($path == 'video')

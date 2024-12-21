@@ -32,9 +32,7 @@ mount(function ($path) {
         <div class="flex-none text-center inter-700 text-xs sm:text-xl px-2">The Orbit <br> University</div>
         <div class="flex-none grid grid-cols-1 gap-1">
             <div>
-                <svg class="mx-auto size-10 sm:size-20 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
+                <img class="mx-auto size-10 sm:size-20" src="{{asset('images/scrollDesign1.png')}}">
             </div>
             <div class="text-center text-xl inter-500 max-sm:hidden">{{$user->name}}</div>
             <div class="text-center max-sm:hidden">{{$user->email}}</div>
@@ -62,10 +60,10 @@ mount(function ($path) {
                             <div class="w-full inter-400 text-lg max-sm:hidden">Programs</div>
                         </div>
                     </a>
-                    <a href="/competitive-analysis" wire:navigate>
-                        <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
+                    <a href="/zen-mode" wire:navigate>
+                        <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg @if($path == 'zen-mode') bg-white/30 @else hover:bg-white/30 @endif transition-colors duration-200">
                             <div class="w-min">
-                                <svg class="size:4 sm:size-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="size:4 sm:size-8 @if( $path == 'zen-mode') text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 18V6l8 6-8 6Z" />
                                 </svg>
                             </div>

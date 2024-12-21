@@ -7,7 +7,7 @@ use function Livewire\Volt\{state};
 ?>
 
 <div class="w-full grow flex flex-col gap-8 relative" x-data="{ height: 0 }" x-resize="height = $height">
-    <div class="absolute inset-x-0 overflow-y-auto flex flex-col py-4 pr-4" :style="'height: ' + height + 'px;'">
+    <div class="absolute inset-x-0 overflow-y-auto flex flex-col gap-4 py-4 pr-4" :style="'height: ' + height + 'px;'">
         <div class="flex max-sm:flex-col sm:justify-between gap-8">
             <div class="sm:w-3/5 border border-white/30 rounded-3xl p-6">
                 <div class="size-full bg-white/30 rounded-3xl"></div>
@@ -52,7 +52,7 @@ use function Livewire\Volt\{state};
                 </div>
             </div>
         </div>
-        <div class="grow flex max-sm:flex-col sm:justify-between gap-8 py-4 pr-4">
+        <div class="grow flex max-sm:flex-col sm:justify-between gap-8">
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
                 <div class="text-white inter-300">Coaching Today</div>
                 <div class="p-5 border border-white/30 rounded-3xl text-white inter-400">No calls for today</div>
