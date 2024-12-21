@@ -101,17 +101,17 @@ mount(function ($path) {
                             <div class="w-full inter-400 text-lg max-sm:hidden">Affiliate</div>
                         </div>
                     </a>
-                    <div wire:click="signOut">
-                        <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
-                            <div class="w-min">
-                                <svg class="size:4 sm:size-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" />
-                                </svg>
-                            </div>
-                            <div class="w-full inter-400 text-lg max-sm:hidden">Sign Out</div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+        <div wire:click="signOut">
+            <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
+                <div class="w-min">
+                    <svg class="size:4 sm:size-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" />
+                    </svg>
+                </div>
+                <div class="w-full inter-400 text-lg max-sm:hidden">Sign Out</div>
             </div>
         </div>
     </div>
