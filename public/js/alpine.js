@@ -15,10 +15,16 @@ function calculateHeight() {
   return {
     contenHeight1: 0,
     contenHeight2: 0,
+    contenHeight3: 0,
+    contenHeight4: 0,
+    contenHeight5: 0,
     init() {
       window.onload = () => {
         this.contenHeight1 = this.$refs.content1.clientHeight;
         this.contenHeight2 = this.$refs.content2.clientHeight;
+        this.contenHeight3 = this.$refs.content3.clientHeight;
+        this.contenHeight4 = this.$refs.content4.clientHeight;
+        this.contenHeight5 = this.$refs.content5.clientHeight;
       };
     }
   };

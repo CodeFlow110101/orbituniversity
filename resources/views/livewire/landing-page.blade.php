@@ -30,16 +30,16 @@ mount(function () {
 
 ?>
 
-<div>
+<div class="h-dvh">
     @if($path == '/')
     <livewire:home />
     @elseif(in_array($path,['dashboard','program','setting','admin','add-program','video','add-video']))
     <livewire:web-app.toastr-popup />
-    <div class="flex justify-between gap-8">
-        <div class="w-1/4">
+    <div class="h-full flex justify-between gap-4 sm:gap-8">
+        <div class="w-min sm:w-1/4 h-full">
             <livewire:web-app.side-bar :path="$path" />
         </div>
-        <div class="w-full h-dvh py-8 pr-8">
+        <div class="w-full h-full flex flex-col">
             @if($path == 'dashboard')
             <livewire:web-app.dashboard />
             @elseif($path == 'program')

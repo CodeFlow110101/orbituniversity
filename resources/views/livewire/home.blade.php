@@ -389,7 +389,43 @@ mount(function () {
                         </div>
                     </div>
                 </div>
-                <div class="h-32"></div>
+                <div class="h-48"></div>
+                <div :style="'height: ' + contenHeight3 + 'px'" class="w-full relative">
+                    <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
+                        <div class="text-white/50">months</div>
+                        <div class="text-white">Craftsman</div>
+                        <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
+                            <div class=" inter-700 text-9xl">
+                                3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-48"></div>
+                <div :style="'height: ' + contenHeight4 + 'px'" class="w-full relative">
+                    <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
+                        <div class="text-white/50">months</div>
+                        <div class="text-white">Craftsman</div>
+                        <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
+                            <div class=" inter-700 text-9xl">
+                                4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-48"></div>
+                <div :style="'height: ' + contenHeight5 + 'px'" class="w-full relative">
+                    <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
+                        <div class="text-white/50">months</div>
+                        <div class="text-white">Craftsman</div>
+                        <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
+                            <div class=" inter-700 text-9xl">
+                                5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-48"></div>
             </div>
             <div class="w-min h-full max-lg:px-2">
                 <div class="w-0.5 h-full bg-white/50 rounded-full">
@@ -411,6 +447,36 @@ mount(function () {
                         <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-blue-700"></div>
                         <div x-ref="stickyElement" class="sticky top-1/2 -mx-8 lg:-mx-16">
                             <img src="{{asset('images/scrollDesign2.png')}}">
+                        </div>
+                    </div>
+                    <div x-data="stickyScrollDesign" class="h-32 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                    <div x-data="stickyScrollDesign" :style="'height: ' + contenHeight3 + 'px'" class="w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2 -mx-8 lg:-mx-16">
+                            <img src="{{asset('images/scrollDesign3.png')}}">
+                        </div>
+                    </div>
+                    <div x-data="stickyScrollDesign" class="h-32 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                    <div x-data="stickyScrollDesign" :style="'height: ' + contenHeight4 + 'px'" class="w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2 -mx-8 lg:-mx-16">
+                            <img src="{{asset('images/scrollDesign4.png')}}">
+                        </div>
+                    </div>
+                    <div x-data="stickyScrollDesign" class="h-32 w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute rounded-t-full top-0 bg-gradient-to-b from-black to-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2"></div>
+                    </div>
+                    <div x-data="stickyScrollDesign" :style="'height: ' + contenHeight5 + 'px'" class="w-full relative">
+                        <div :style="'height: ' + topElementHeight + 'px'" class="w-full absolute top-0 bg-blue-700"></div>
+                        <div x-ref="stickyElement" class="sticky top-1/2 -mx-8 lg:-mx-16">
+                            <img src="{{asset('images/scrollDesign5.png')}}">
                         </div>
                     </div>
                     <div x-data="stickyScrollDesign" class="h-32 w-full relative">
@@ -451,14 +517,90 @@ mount(function () {
                     <div class="h-20"></div>
                 </div>
 
-
-
                 <div x-ref="content2" class="h-min w-full grid grid-cols-1 gap-4">
                     <div class="w-full">
                         <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
                             <div class="text-blue-700 flex justify-between w-min">
                                 <div class="inter-700 text-9xl scale-x-75">
                                     2
+                                </div>
+                            </div>
+                            <div class="mt-auto w-full text-left">
+                                <div class="text-white/50">months</div>
+                                <div class="text-white">Craftsman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:text-2xl text-white inter-800">Get Access To My 8-Figure Network</div>
+                    <div class="grid grid-rows-1 grid-flow-col gap-2">
+                        <img src="{{asset('/images/home12.webp')}}">
+                        <img src="{{asset('/images/home13.webp')}}">
+                    </div>
+                    <div class="text-white text-sm lg:text-xl inter-300">
+                        On your 2nd Month, you'll get access to my own network. Every single month we'll host <span class="inter-800">LIVE Calls with people from my Network.</span> Imagine being on the same call as 8 and 9-figure serial entrepreneurs. If you think about it, each one of them has made a $1,000 dozens of thousands of times. So they know a thing or two about making money, and can help you get there too.
+                    </div>
+                    <div class="h-20"></div>
+                </div>
+
+                <div x-ref="content3" class="h-min w-full grid grid-cols-1 gap-4">
+                    <div class="w-full">
+                        <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
+                            <div class="text-blue-700 flex justify-between w-min">
+                                <div class="inter-700 text-9xl scale-x-75">
+                                    3
+                                </div>
+                            </div>
+                            <div class="mt-auto w-full text-left">
+                                <div class="text-white/50">months</div>
+                                <div class="text-white">Craftsman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:text-2xl text-white inter-800">Get Access To My 8-Figure Network</div>
+                    <div class="grid grid-rows-1 grid-flow-col gap-2">
+                        <img src="{{asset('/images/home12.webp')}}">
+                        <img src="{{asset('/images/home13.webp')}}">
+                    </div>
+                    <div class="text-white text-sm lg:text-xl inter-300">
+                        On your 2nd Month, you'll get access to my own network. Every single month we'll host <span class="inter-800">LIVE Calls with people from my Network.</span> Imagine being on the same call as 8 and 9-figure serial entrepreneurs. If you think about it, each one of them has made a $1,000 dozens of thousands of times. So they know a thing or two about making money, and can help you get there too.
+                    </div>
+                    <div class="h-20"></div>
+                </div>
+
+                <div x-ref="content4" class="h-min w-full grid grid-cols-1 gap-4">
+                    <div class="w-full">
+                        <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
+                            <div class="text-blue-700 flex justify-between w-min">
+                                <div class="inter-700 text-9xl scale-x-75">
+                                    4
+                                </div>
+                            </div>
+                            <div class="mt-auto w-full text-left">
+                                <div class="text-white/50">months</div>
+                                <div class="text-white">Craftsman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:text-2xl text-white inter-800">Get Access To My 8-Figure Network</div>
+                    <div class="grid grid-rows-1 grid-flow-col gap-2">
+                        <img src="{{asset('/images/home12.webp')}}">
+                        <img src="{{asset('/images/home13.webp')}}">
+                    </div>
+                    <div class="text-white text-sm lg:text-xl inter-300">
+                        On your 2nd Month, you'll get access to my own network. Every single month we'll host <span class="inter-800">LIVE Calls with people from my Network.</span> Imagine being on the same call as 8 and 9-figure serial entrepreneurs. If you think about it, each one of them has made a $1,000 dozens of thousands of times. So they know a thing or two about making money, and can help you get there too.
+                    </div>
+                    <div class="h-20"></div>
+                </div>
+
+                <div x-ref="content5" class="h-min w-full grid grid-cols-1 gap-4">
+                    <div class="w-full">
+                        <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
+                            <div class="text-blue-700 flex justify-between w-min">
+                                <div class="inter-700 text-9xl scale-x-75">
+                                    5
                                 </div>
                             </div>
                             <div class="mt-auto w-full text-left">
