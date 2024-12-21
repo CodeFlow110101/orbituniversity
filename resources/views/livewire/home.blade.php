@@ -368,7 +368,7 @@ mount(function () {
                 <div :style="'height: ' + contenHeight1 + 'px'" class="w-full relative">
                     <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
                         <div class="text-white/50">month</div>
-                        <div class="text-white">Apprentice</div>
+                        <div class="text-white">Overcomer</div>
                         <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
                             <div class=" inter-700 text-9xl">
                                 1
@@ -381,7 +381,7 @@ mount(function () {
                 <div :style="'height: ' + contenHeight2 + 'px'" class="w-full relative">
                     <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
                         <div class="text-white/50">months</div>
-                        <div class="text-white">Craftsman</div>
+                        <div class="text-white">Guardian</div>
                         <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
                             <div class=" inter-700 text-9xl">
                                 2
@@ -393,7 +393,7 @@ mount(function () {
                 <div :style="'height: ' + contenHeight3 + 'px'" class="w-full relative">
                     <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
                         <div class="text-white/50">months</div>
-                        <div class="text-white">Craftsman</div>
+                        <div class="text-white">Knight</div>
                         <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
                             <div class=" inter-700 text-9xl">
                                 3
@@ -405,10 +405,10 @@ mount(function () {
                 <div :style="'height: ' + contenHeight4 + 'px'" class="w-full relative">
                     <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
                         <div class="text-white/50">months</div>
-                        <div class="text-white">Craftsman</div>
+                        <div class="text-white">Sultan</div>
                         <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
                             <div class=" inter-700 text-9xl">
-                                4
+                                6
                             </div>
                         </div>
                     </div>
@@ -416,11 +416,11 @@ mount(function () {
                 <div class="h-48"></div>
                 <div :style="'height: ' + contenHeight5 + 'px'" class="w-full relative">
                     <div x-ref="stickyElement" class="sticky top-1/2 scale-y-125 w-min float-end relative uppercase text-4xl inter-700 text-right">
-                        <div class="text-white/50">months</div>
-                        <div class="text-white">Craftsman</div>
+                        <div class="text-white/50">year</div>
+                        <div class="text-white"><span class="whitespace-nowrap">King of</span> Kings</div>
                         <div class="absolute -z-10 -top-14 -left-14 scale-150 text-blue-700/50 flex justify-between w-min">
                             <div class=" inter-700 text-9xl">
-                                5
+                                1
                             </div>
                         </div>
                     </div>
@@ -497,7 +497,7 @@ mount(function () {
                             </div>
                             <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">month</div>
-                                <div class="text-white">Apprentice</div>
+                                <div class="text-white">Overcomer</div>
                             </div>
                         </div>
                     </div>
@@ -527,7 +527,7 @@ mount(function () {
                             </div>
                             <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">months</div>
-                                <div class="text-white">Craftsman</div>
+                                <div class="text-white">Guardian</div>
                             </div>
                         </div>
                     </div>
@@ -553,7 +553,7 @@ mount(function () {
                             </div>
                             <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">months</div>
-                                <div class="text-white">Craftsman</div>
+                                <div class="text-white">Knight</div>
                             </div>
                         </div>
                     </div>
@@ -574,12 +574,12 @@ mount(function () {
                         <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
                             <div class="text-blue-700 flex justify-between w-min">
                                 <div class="inter-700 text-9xl scale-x-75">
-                                    4
+                                    6
                                 </div>
                             </div>
                             <div class="mt-auto w-full text-left">
                                 <div class="text-white/50">months</div>
-                                <div class="text-white">Craftsman</div>
+                                <div class="text-white">Sultan</div>
                             </div>
                         </div>
                     </div>
@@ -600,12 +600,12 @@ mount(function () {
                         <div class="flex justify-between uppercase text-xl lg:text-4xl inter-700 text-right">
                             <div class="text-blue-700 flex justify-between w-min">
                                 <div class="inter-700 text-9xl scale-x-75">
-                                    5
+                                    1
                                 </div>
                             </div>
                             <div class="mt-auto w-full text-left">
-                                <div class="text-white/50">months</div>
-                                <div class="text-white">Craftsman</div>
+                                <div class="text-white/50">year</div>
+                                <div class="text-white">King of Kings</div>
                             </div>
                         </div>
                     </div>

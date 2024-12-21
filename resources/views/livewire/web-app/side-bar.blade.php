@@ -43,7 +43,7 @@ mount(function ($path) {
                     <a href="/dashboard" wire:navigate>
                         <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg @if($path == 'dashboard') bg-white/30 @else hover:bg-white/30 @endif transition-colors duration-200">
                             <div class="w-min">
-                                <svg class="size:4 sm:size-8 @if($path == 'dashboard') text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="size:4 sm:size-8 @if($path == 'dashboard') text-blue-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z" />
                                 </svg>
                             </div>
@@ -53,7 +53,7 @@ mount(function ($path) {
                     <a href="/program" wire:navigate>
                         <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg @if($path == 'program' || $path == 'add-program') bg-white/30 @else hover:bg-white/30 @endif transition-colors duration-200">
                             <div class="w-min">
-                                <svg class="size:4 sm:size-8 @if(in_array($path , ['program' , 'add-program' , 'video' , 'add-video'])) text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="size:4 sm:size-8 @if(in_array($path , ['program' , 'add-program' , 'video' , 'add-video'])) text-blue-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linejoin="round" stroke-width="1" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z" />
                                 </svg>
                             </div>
@@ -63,7 +63,7 @@ mount(function ($path) {
                     <a href="/zen-mode" wire:navigate>
                         <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg @if($path == 'zen-mode') bg-white/30 @else hover:bg-white/30 @endif transition-colors duration-200">
                             <div class="w-min">
-                                <svg class="size:4 sm:size-8 @if( $path == 'zen-mode') text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="size:4 sm:size-8 @if( $path == 'zen-mode') text-blue-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 18V6l8 6-8 6Z" />
                                 </svg>
                             </div>
@@ -83,7 +83,7 @@ mount(function ($path) {
                     <a href="/setting" wire:navigate>
                         <div class="flex justify-evenly gap-4 items-center px-3 py-2 mx-3 rounded-lg hover:bg-white/30 transition-colors duration-200">
                             <div class="w-min">
-                                <svg class="size:4 sm:size-8 @if($path == 'setting') text-red-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="size:4 sm:size-8 @if($path == 'setting') text-blue-700 @else text-white @endif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                 </svg>
