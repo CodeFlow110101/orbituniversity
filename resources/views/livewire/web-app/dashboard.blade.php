@@ -47,8 +47,25 @@ use function Livewire\Volt\{state};
         </div>
         <div class="grow flex max-sm:flex-col sm:justify-between gap-8">
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
-                <div class="text-white inter-300">Coaching Today</div>
-                <div class="p-5 border border-white/30 rounded-3xl text-white inter-400">No calls for today</div>
+                <div class="inter-500 text-blue-700">Notes Board</div>
+                <div class="text-white flex flex-col gap-2">
+                    <div class="text-center">Today</div>
+                    <div class="px-5 py-3 border border-white/30 rounded-3xl flex justify-between items-center inter-400">
+                        <div>
+                            No calls for today
+                        </div>
+                        <div>8:34pm</div>
+                    </div>
+                </div>
+                <div class="text-white flex flex-col gap-2">
+                    <div class="text-center">Yesterday</div>
+                    <div class="px-5 py-3 border border-white/30 rounded-3xl flex justify-between items-center inter-400">
+                        <div>
+                            Join the emergency meeting today
+                        </div>
+                        <div>8:34pm</div>
+                    </div>
+                </div>
             </div>
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
                 <div class="text-white inter-300">Resume where you left</div>
