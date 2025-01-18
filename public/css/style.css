@@ -53,12 +53,27 @@
     font-style: normal;
 }
 
+.asing-regular {
+    font-family: "Ahsing", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ahsing';
+    src: url('/fonts/Ahsing-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 ::-webkit-scrollbar {
     width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(185 28 28);
+    background: rgb(29 78 216);
     border-radius: 10px;
 }
 
@@ -67,7 +82,7 @@
 }
 
 .narrow-scrollbar::-webkit-scrollbar-thumb {
-    background: rgb(185 28 28);
+    background: rgb(29 78 216);
     border-radius: 4px; /* Rounded corners */
 }
 

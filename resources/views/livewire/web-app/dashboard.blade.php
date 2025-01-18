@@ -1,8 +1,33 @@
 <?php
 
-use function Livewire\Volt\{state};
+use App\Models\Program;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
-//
+use function Livewire\Volt\{state, mount, with, rules};
+
+state(['form' => false, 'note']);
+
+rules(['note' => 'required']);
+
+with(fn() => [
+    'programs' => Program::get(),
+    'notes' => Auth::user()->notes,
+]);
+
+$toggleForm = function () {
+    $this->form = !$this->form;
+};
+
+$submit = function () {
+    Auth::user()->notes()->create([
+        'text' => $this->note,
+    ]);
+
+    $this->reset(['form', 'note']);
+};
+
+mount(function () {});
 
 ?>
 
@@ -47,30 +72,59 @@ use function Livewire\Volt\{state};
         </div>
         <div class="grow flex max-sm:flex-col sm:justify-between gap-8">
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
-                <div class="inter-500 text-blue-700">Notes Board</div>
-                <div class="text-white flex flex-col gap-2">
-                    <div class="text-center">Today</div>
-                    <div class="px-5 py-3 border border-white/30 rounded-3xl flex justify-between items-center inter-400">
-                        <div>
-                            No calls for today
+                <div class="flex justify-between items-center">
+                    <div class="inter-500 text-blue-700">Notes Board</div>
+                    <button wire:click="toggleForm">
+                        @if($form)
+                        <svg class="w-6 h-6 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                        </svg>
+                        @else
+                        <svg class="w-6 h-6 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+                        </svg>
+                        @endif
+                    </button>
+                </div>
+                <div class="grow relative" x-data="{ height: 0 }" x-resize="height = $height">
+                    <div class="overflow-y-auto absolute w-full" :style="'height: ' + height + 'px;'">
+                        @foreach($notes as $note)
+                        <div class="text-white flex flex-col gap-2">
+                            <div class="text-center">{{ Carbon::parse($note->created_at)->diffForHumans() }}</div>
+                            <div class="px-5 py-3 border border-white/30 rounded-3xl flex gap-2 justify-between items-center inter-400">
+                                <div>
+                                    {{ $note->text }}
+                                </div>
+                                <div>{{ Carbon::parse($note->created_at)->format('g:ia') }}</div>
+                            </div>
                         </div>
-                        <div>8:34pm</div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="text-white flex flex-col gap-2">
-                    <div class="text-center">Yesterday</div>
-                    <div class="px-5 py-3 border border-white/30 rounded-3xl flex justify-between items-center inter-400">
-                        <div>
-                            Join the emergency meeting today
+                @if($form)
+                <form wire:submit="submit" class="flex flex-col gap-4">
+                    <div class="inter-500 text-blue-700">Add Notes</div>
+                    <input wire:model="note" class="rounded-full border border-white py-2 px-4 outline-none text-center w-full bg-transparent text-white">
+                    <button class="rounded-full relative overflow-hidden border border-white py-2 px-4 outline-none text-center w-full bg-transparent text-white">
+                        <div wire:target="submit" wire:loading.class="invisible">Submit</div>
+                        <div wire:target="submit" wire:loading.class.remove="hidden" class="absolute hidden inset-0 flex justify-center items-center p-2">
+                            <svg aria-hidden="true" class="w-8 h-8 text-transparent animate-spin fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+                                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+                            </svg>
                         </div>
-                        <div>8:34pm</div>
-                    </div>
-                </div>
+                    </button>
+                </form>
+                @endif
             </div>
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
                 <div class="text-white inter-300">Resume where you left</div>
-                <div class="grow bg-white/30 relative rounded-3xl">
-                    <div class="absolute inset-0 bg-gradient-to-t rounded-3xl from-green-700 from-10%"></div>
+                <div class="grow bg-white/30 overflow-hidden rounded-3xl">
+                    @if(count($programs) != 0)
+                    <a href="/program" wire:navigate>
+                        <img class="size-full" src="{{ $programs[0]->image }}">
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>
