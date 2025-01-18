@@ -119,10 +119,10 @@ mount(function () {});
             </div>
             <div class="sm:w-1/2 border border-white/30 rounded-3xl p-6 flex flex-col gap-6">
                 <div class="text-white inter-300">Resume where you left</div>
-                <div class="grow bg-white/30 overflow-hidden rounded-3xl">
+                <div class="grow bg-white/30 overflow-hidden rounded-3xl" x-data="{ height: 0 }" x-resize="height = $height">
                     @if(count($programs) != 0)
                     <a href="/program" wire:navigate>
-                        <img class="size-full" src="{{ $programs[0]->image }}">
+                        <img class="w-full" src="{{ $programs[0]->image }}" :style="'height: ' + height + 'px;'">
                     </a>
                     @endif
                 </div>
